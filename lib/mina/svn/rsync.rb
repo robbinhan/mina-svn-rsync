@@ -48,7 +48,6 @@ namespace :rsync do
     clone = %w[svn co]
     clone << settings.repository
     clone << settings.rsync_stage
-    clone << settings.svn_username
     run.call clone
   end
 
@@ -63,4 +62,4 @@ namespace :rsync do
 
   desc "Stage, rsync and copy to the build path."
   task :deploy => %w[rsync build]
-e
+end
